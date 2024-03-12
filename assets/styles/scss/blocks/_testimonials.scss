@@ -1,0 +1,127 @@
+
+#primary .testimonials .splide__slide {
+	height: auto;
+}
+
+.testimonials {
+
+	$bottom-margin: 35px;
+	.testimonial {
+		margin-bottom: $bottom-margin;
+	}
+
+	&__grid {
+		margin-bottom: -$bottom-margin;
+	}
+
+	.splide__slide {
+		text-align: center;
+	}
+
+	@include breakpoint(medium) {
+		&.images_cells {
+			$side-margin: 20px;
+
+			.testimonial {
+				margin-left: $side-margin;
+				margin-right: $side-margin;
+				width: calc(50% - #{$side-margin*2});
+				img {
+					margin: 0 auto;
+				}
+
+			}
+			.two-rows {
+				.testimonial {
+					width: calc(50% - #{$side-margin*2});
+				}
+			}
+			.testimonials__grid {
+				margin-left: -$side-margin;
+				margin-right: -$side-margin;
+			}
+		}
+	}
+
+
+	@include breakpoint(large) {
+
+		&.images_cells {
+			$side-margin: 70px;
+
+			.testimonial {
+				margin-left: $side-margin;
+				margin-right: $side-margin;
+				width: calc(25% - #{$side-margin*2});
+			}
+			.two-rows {
+				.testimonial {
+					width: calc(25% - #{$side-margin*2});
+				}
+			}
+			.testimonials__grid {
+				margin-left: -$side-margin;
+				margin-right: -$side-margin;
+
+			}
+		}
+		$bottom-margin: 65px;
+		.testimonial {
+			margin-bottom: $bottom-margin;
+		}
+
+		&__grid {
+			margin-bottom: -$bottom-margin;
+		}
+
+
+	}
+
+	@include breakpoint(xxlarge) {
+		$side-margin: 42px;
+		$bottom-margin: 60px;
+
+		&.images_cells {
+			.testimonial {
+				margin-left: $side-margin;
+				margin-right: $side-margin;
+				width: calc(100% / 6 - #{$side-margin*2});
+				margin-bottom: $bottom-margin;
+			}
+			.two-rows {
+				.testimonial {
+					width: calc(25% - #{$side-margin*2});
+					padding-right: 10px;
+					padding-left: 10px;
+				}
+			}
+			.testimonials__grid {
+				margin-left: -$side-margin;
+				margin-right: -$side-margin;
+				margin-bottom: -$bottom-margin;
+				&.two-rows {
+					$side-padding: 15%;
+					padding-left: $side-padding;
+					padding-right: $side-padding;
+				}
+			}
+		}
+
+	}
+}
+
+.testimonial-slide {
+	&__heading {
+		font-size: 18px;
+		font-weight: 400;
+	}
+	&__image {
+		margin-bottom: 25px;
+		$size: 45px;
+		height: $size;
+		width: $size;
+		border-radius: 50%;
+		@include bgcover;
+		display: inline-block;
+	}
+}

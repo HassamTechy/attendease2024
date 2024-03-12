@@ -1,0 +1,58 @@
+{
+  "name": "facta-static-theme",
+  "version": "1.0.0",
+  "description": "Theme used to quickly build out the front-end of sites",
+  "author": "Facta Studio",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "HTML",
+    "Theme",
+    "Static"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Facta-Studio/static-template"
+  },
+  "bugs": {
+    "url": "https://github.com/Facta-Studio/static-template/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/eslint-parser": "^7.21.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/preset-env": "^7.21.4",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "browser-sync": "^2.29.1",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "foundation-sites": "latest",
+    "jquery": "^3.7.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "motion-ui": "^2.0.4",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "build:fn": "webpack --mode production --config webpack-build-foundation-core.config.js",
+    "dev": "webpack --mode development --config webpack.config.js",
+    "dev:watch": "webpack --mode development --watch --config webpack.config.js",
+    "dev:watch:bs": "webpack --mode development --watch --config webpack.config.js --env useBs=on",
+    "dev:watch-css-only:bs": "webpack --mode development --watch --config webpack.config.js --env useBs=on --env cssOnly=on"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.0.7",
+    "photoswipe": "^5.3.7",
+    "scrollmagic": "^2.0.8",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^9.2.0",
+    "what-input": "^5.2.12"
+  }
+}

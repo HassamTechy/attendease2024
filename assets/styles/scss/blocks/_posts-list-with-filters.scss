@@ -1,0 +1,82 @@
+
+.filtered-posts {
+
+	.block-header {
+
+		@include breakpoint(medium down) {
+			font-size: 38px;
+		}
+		@include breakpoint(small only) {
+			font-size: 32px;
+		}
+	}
+
+	.posts-filter {
+		&__title {
+			margin-bottom: 20px;
+			font-size: 26px;
+			border-left: 3px solid get-color(primary);
+			padding-left: 10px;
+		}
+	}
+
+
+
+	.posts-filters-cell {
+		margin-top: 30px;
+	}
+
+	.fwpl-layout {
+		grid-gap: 30px;
+	}
+
+	.facetwp-checkbox {
+		font-size: 16px;
+	}
+
+	@include breakpoint(small only) {
+		&__grid {
+
+			flex-flow: row wrap-reverse;
+		}
+		.posts-filters-cell {
+			margin-bottom: 30px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		.posts-filters-cell {
+			margin-top: 0;
+			padding-left: 15px;
+		}
+
+	}
+	@include breakpoint(xlarge) {
+		.posts-filter {
+			&__title {
+				font-size: 31px;
+			}
+		}
+		.posts-filters-cell {
+			padding-left: 40px;
+		}
+		.facetwp-checkbox {
+			font-size: inherit;
+		}
+	}
+}
+
+.filtered-posts__post {
+	margin-bottom: 45px;
+	&__title {
+		margin-top: 15px;
+		font-size: 24px;
+	}
+	@include breakpoint(large) {
+		margin-bottom: 75px;
+		&__title {
+			margin-top: 25px;
+			font-size: 30px;
+		}
+	}
+}

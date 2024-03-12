@@ -1,0 +1,14 @@
+#colophon {
+	background:#ccc;
+	padding:100px 30px;
+	.inner-footer {
+		@include limit-width;
+	}
+	#footer-menu {
+		@include flex;
+		justify-content: space-between;
+		.sub-menu {
+			@include list-unstyled;
+		}
+	}
+}

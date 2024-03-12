@@ -1,0 +1,41 @@
+.cta-banner {
+	background-color: get-color(light-grey);
+	&__text-cell {
+		margin-bottom: 20px;
+	}
+
+	@include breakpoint(small only) {
+		&__cta-cell {
+			$button-x-indent: 15px;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+			gap: $button-x-indent;
+			.button {
+				margin: 15px 0 0 0;
+			}
+		}
+	}
+	@include breakpoint(medium) {
+		.button {
+			margin-right: 20px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	@include breakpoint(xxlarge) {
+		&__text-cell {
+			padding-right: 5%;
+			margin-bottom: 0;
+		}
+
+		.button {
+			margin-right: 45px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+	}
+}

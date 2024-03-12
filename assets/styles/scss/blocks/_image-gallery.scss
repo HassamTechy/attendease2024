@@ -1,0 +1,167 @@
+@use "sass:math";
+
+.image-gallery {
+
+	.inner-section {
+		max-width: rem-calc(1120px);
+		margin: 0 auto;
+	}
+
+	.images-grid {
+		display: flex;
+		flex-wrap: wrap;
+		grid-gap: rem-calc(40px);
+		justify-content: center;
+		align-items: flex-start;
+
+
+		&__item {
+			position: relative;
+			width: 100%;
+
+
+			a {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 100%;
+				//padding-bottom: 70%;
+			}
+		}
+		&__preview-img {
+			width: 100%;
+			object-fit: cover;
+			height: rem-calc(250px);
+			display: block;
+		}
+	}
+
+}
+
+// custom styles for Photoswipe should not have parent-css selector as Photoswipe modal container is being rendered as <body> direct child
+.pswp {
+
+
+	&.pswp--touch {
+		.pswp__button--arrow {
+			visibility: unset; // by default - on touchscreen devices - arrows for Photoswipe is hidden
+		}
+	}
+
+	.pswp__custom-caption {
+		font-size: rem-calc(14px);
+		color: #fff;
+		width: 100%;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		text-align: center;
+		transform: translateX(-50%);
+		text-shadow: rem-calc(3px) rem-calc(3px) rem-calc(4px) rgba(0, 0, 0, 0.6);
+		padding: rem-calc(10px) 20px rem-calc(10px) 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background: rgba(0,0,0,0.4);
+		* {
+			text-shadow: inherit;
+		}
+
+		.image-caption {
+			margin: rem-calc(12px) auto;
+			font-size: rem-calc(16px);
+		}
+
+		span {
+			display: inline-block;
+			max-width: rem-calc(840px);
+			margin: 0 auto;
+		}
+
+		&.hide-caption {
+			display: none;
+		}
+	}
+
+	.pswp__custom-caption a {
+		color: inherit;
+		text-decoration: underline;
+		text-shadow: inherit;
+	}
+
+	.hidden-caption-content {
+		display: none;
+	}
+
+}
+
+
+
+
+
+
+
+
+@include breakpoint(medium down) {
+
+	.pswp {
+		.pswp__custom-caption {
+			.image-caption {
+				margin-top: 12px;
+			}
+		}
+
+		.pswp__button--arrow {
+			.pswp__icn {
+				width: 40px;
+			}
+		}
+	}
+
+
+}
+
+@include breakpoint(medium) {
+	.image-gallery {
+
+		.images-grid {
+			$gap: 30px;
+			$columns: 2;
+			grid-gap: rem-calc($gap);
+
+			&__item {
+				@if($columns > 1) {
+					flex-basis: calc((100% / #{$columns}) - #{rem-calc($gap * math.div($columns - 1, $columns))});
+				}
+				@else {
+					flex-basis: 100%;
+				}
+			}
+		}
+
+	}
+}
+
+
+
+@include breakpoint(large) {
+	.image-gallery {
+
+		.images-grid {
+			$gap: 40px;
+			$columns: 3;
+			grid-gap: rem-calc($gap);
+
+			&__item {
+				@if($columns > 1) {
+					flex-basis: calc((100% / #{$columns}) - #{rem-calc($gap * math.div($columns - 1, $columns))});
+				}
+				@else {
+					flex-basis: 100%;
+				}
+			}
+		}
+
+	}
+}

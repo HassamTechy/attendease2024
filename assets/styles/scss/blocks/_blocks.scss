@@ -1,0 +1,221 @@
+/****************************************************
+
+GENERAL BLOCK STYLES
+
+****************************************************/
+
+$blocks-layout-width: 1685px;
+
+.wrapper {
+	margin: 0 auto;
+	max-width: $global-width;
+	padding: 0 15px;
+
+	&.full {
+		max-width: 100%;
+	}
+
+	//@include breakpoint(medium) {
+	//
+	//}
+	//@include breakpoint(large){
+	//}
+	//@include breakpoint(xxlarge) {
+	//
+	//}
+}
+
+.custom-block {
+	$padding: 45px;
+	padding-top: $padding;
+	padding-bottom: $padding;
+	overflow: hidden;
+	@include breakpoint(medium) {
+		$padding: 50px;
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}
+
+	@include breakpoint(large) {
+		$padding: 5%;
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}
+	@include breakpoint(xxlarge) {
+		$padding: 6%;
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}
+}
+
+
+.block-subheader, .block-header {
+	display: inline-block;
+	width: 100%;
+
+	&.no-margin-bottom {
+		margin-bottom: 0 !important;
+	}
+}
+
+.block-header {
+	margin-bottom: 3rem;
+}
+
+.block-headlines {
+	margin-bottom: 4.35rem;
+
+	.block-header {
+		margin-bottom: 1.7rem;
+
+		&.small-h2 {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+
+.splide {
+	$pagination-bottom-indent: 40px;
+	margin-bottom: $pagination-bottom-indent;
+
+	&__list {
+		@include list-unstyled;
+	}
+
+	&__arrow {
+		min-width: inherit;
+	}
+
+	&__pagination {
+		bottom: -$pagination-bottom-indent*0.65;
+
+		&__page {
+			min-width: inherit;
+
+			&.is-active {
+				background-color: get-color(primary);
+			}
+		}
+	}
+
+}
+
+.js-square-image {
+	object-fit: cover;
+	max-width: 100%;
+	opacity: 0;
+	border-radius: 50%;
+
+	&.js-loaded {
+		opacity: 1;
+	}
+}
+
+
+.videoHolder {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+
+	.video {
+		pointer-events: none;
+		touch-action: none;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+
+	iframe {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+
+@include breakpoint(large) {
+	.block-subheader, .block-header {
+		&.half-width {
+			padding-right: 50%;
+		}
+	}
+}
+
+@include breakpoint(medium down) {
+	.block-headlines {
+		margin-bottom: 2.35rem;
+	}
+	.block-header {
+		margin-bottom: 1.5rem;
+	}
+}
+
+@include breakpoint(small only) {
+	.splide {
+		&__arrow {
+			&--prev {
+				left: 0;
+			}
+
+			&--next {
+				right: 0;
+			}
+		}
+
+		&__slide {
+			padding-left: 2rem;
+			padding-right: 23rem;
+		}
+	}
+
+	.block-headlines {
+		margin-bottom: 1.5rem;
+
+		.block-header {
+			margin-bottom: 0.5rem;
+
+			&.small-h2 {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+}
+
+#primary {
+	.splide {
+		&__slide {
+			width: 400px;
+			height: 350px;
+		}
+	}
+}
+
+.wp-block-paragraph {
+	padding-top: rem-calc(50px);
+	padding-bottom: rem-calc(50px);
+	& + .wp-block-paragraph {
+		padding-top: 0;
+	}
+}
+//Import all other block files here
+
+@import 'example';
+@import "image-gallery";
+@import "hero";
+@import "cta-banner";
+@import "cta-text-blocks";
+@import "large-image-and-text";
+@import "image-and-text";
+@import "testimonials";
+@import "posts-list-with-filters";

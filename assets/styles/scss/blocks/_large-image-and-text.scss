@@ -1,0 +1,40 @@
+.large-image-and-text {
+	@include breakpoint(medium down) {
+		&__text-cell {
+			order: 1;
+			margin-top: 40px;
+		}
+	}
+	@include breakpoint(large) {
+		&__wrapper {
+			&.img-on-left {
+				padding-left: 0;
+			}
+			&.img-on-right {
+				padding-right: 0;
+			}
+		}
+		&__text-cell {
+			$padding-indent: 2.5%;
+			&.right-offset {
+				padding-left: $padding-indent;
+			}
+			&.left-offset {
+				padding-right: $padding-indent;
+			}
+		}
+
+		.block-header {
+			margin-bottom: 1.8rem;
+		}
+	}
+	@include breakpoint(xxlarge) {
+		.block-header {
+			margin-bottom: 2.25rem;
+		}
+		&__image {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+}

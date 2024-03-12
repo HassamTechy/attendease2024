@@ -1,0 +1,39 @@
+.image-and-text {
+	&.grey {
+		background-color: get-color(light-grey);
+	}
+	&__text-cell{
+
+	}
+	&__image {
+		width: 100%;
+		object-fit: cover;
+	}
+	&__text {
+		margin-bottom: 30px;
+	}
+	@include breakpoint(medium down) {
+		&__text-cell{
+			margin-top: 45px;
+		}
+	}
+	@include breakpoint(large) {
+		&__text-cell{
+			padding-top: 3%;
+		}
+
+		&__image {
+			max-height: 440px;
+		}
+
+		&__wrapper {
+			&.img-on-right {
+				padding-right: 0;
+			}
+			&.img-on-left {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
